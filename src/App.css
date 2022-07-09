@@ -1,38 +1,1072 @@
 .App {
-  text-align: center;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  color: var(--white);
+  padding: 25px 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar .right-nav-wrapper {
+  display: flex;
+  width: 500px;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar .right-nav-wrapper .nav {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 500;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.navbar .right-nav-wrapper .contact-btn {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  padding: 15px 20px;
+  border-radius: 50px;
+  background-color: var(--white);
+}
+
+.navbar .right-nav-wrapper .contact-btn:hover {
+  background-color: rgb(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.navbar .toggle-menu-wrapper {
+  display: none;
+  position: relative;
+}
+
+.navbar .toggle-menu-wrapper .hamburger-icon {
+  cursor: pointer;
+}
+
+.navbar .toggle-menu-wrapper .menu {
+  display: none;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  height: 400px;
+  width: 400px;
+  background-color: var(--white);
+  color: var(--very-dark-grayish-blue);
+}
+
+.navbar .toggle-menu-wrapper .menu .triangle {
+  position: absolute;
+  right: 0;
+  top: -10%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 50px 65px 50px 0;
+  border-color: transparent #ffffff transparent transparent;
+}
+
+.navbar .toggle-menu-wrapper .menu .wrapper {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
+}
+
+.navbar .toggle-menu-wrapper .menu .wrapper .menu-item {
+  display: block;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.5;
+  color: var(--dark-grayish-blue);
+}
+
+.navbar .toggle-menu-wrapper .menu .wrapper .contact-btn {
+  display: block;
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 20px 30px;
+  border-radius: 50px;
+  background-color: var(--yellow);
+}
+
+.navbar .toggle-menu-wrapper .menu.show {
+  display: block;
+}
+
+.hero-section {
+  width: 100%;
+  height: 100vh;
+  background-image: url('assets/images/desktop/image-header.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.hero-section .heading-wrapper {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.hero-section .heading-wrapper .heading {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 40px;
+  letter-spacing: 8px;
+  color: var(--white);
+  padding-bottom: 90px;
+}
+
+.hero-section .heading-wrapper .arrow-down {
+  display: block;
+  margin: 0 auto;
+}
+
+.about-services-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 550px);
+}
+
+.about-services-section .image-transform-wrapper {
+  background-image: url('assets/images/desktop/image-transform.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.about-services-section .image-stand-out-wrapper {
+  background-image: url('assets/images/desktop/image-stand-out.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.about-services-section .graphic-design {
+  background-image: url('assets/images/desktop/image-graphic-design.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.about-services-section .photography {
+  background-image: url('assets/images/desktop/image-photography.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.about-services-section .transform-brand,
+.about-services-section .stand-out-right-audience {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.about-services-section .transform-brand .inner-wrapper {
+  width: 50%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.about-services-section .stand-out-right-audience .inner-wrapper {
+  width: 60%;
+}
+
+.about-services-section .transform-brand h2,
+.about-services-section .stand-out-right-audience h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 1.25;
+  color: var(--very-dark-desaturated-blue);
+  padding-bottom: 20px;
+}
+
+.about-services-section .transform-brand a,
+.about-services-section .stand-out-right-audience a {
+  position: relative;
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  color: var(--very-dark-desaturated-blue);
+}
+
+.about-services-section .transform-brand a::after,
+.about-services-section .stand-out-right-audience a::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: -4%;
+  right: 0;
+  width: 110%;
+  height: 10px;
+  border-radius: 50px;
+  z-index: -10;
+  opacity: 0.3;
+  transition: all 0.15s ease-in-out;
+}
+
+.about-services-section .transform-brand a::after {
+  background-color: var(--yellow);
+}
+
+.about-services-section .stand-out-right-audience a::after {
+  background-color: var(--soft-red);
+}
+
+.about-services-section .transform-brand a:hover::after,
+.about-services-section .stand-out-right-audience a:hover::after {
+  opacity: 1;
+}
+
+.about-services-section .transform-brand p,
+.about-services-section .stand-out-right-audience p {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--dark-grayish-blue);
+  padding-bottom: 30px;
+}
+
+.about-services-section .graphic-design,
+.about-services-section .photography {
+  position: relative;
+}
+
+.about-services-section .graphic-design {
+  color: var(--dark-desaturated-cyan);
+}
+
+.about-services-section .photography {
+  color: var(--dark-blue);
+}
+
+.about-services-section .graphic-design .inner-wrapper,
+.about-services-section .photography .inner-wrapper {
+  width: 55%;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translate(-50%, 0%);
+}
+
+.about-services-section .graphic-design h3,
+.about-services-section .photography h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 26px;
+  padding-bottom: 30px;
+}
+
+.about-services-section .graphic-design p,
+.about-services-section .photography p {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.testimonials-section {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonials-section h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  color: var(--grayish-blue);
+  letter-spacing: 8px;
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 70px;
+}
+
+.testimonials-section .clients-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  width: 90%;
+}
+
+.testimonials-section .client-wrapper {
+  text-align: center;
+  width: 31%;
+}
+
+.testimonials-section .client-wrapper .profile-photo {
+  width: 80px;
+  border-radius: 50%;
+}
+
+.testimonials-section .client-wrapper .feedback {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 500;
+  line-height: 1.7;
+  color: var(--very-dark-grayish-blue);
+}
+
+.testimonials-section .client-wrapper .name {
+  padding-bottom: 15px;
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  color: var(--very-dark-desaturated-blue);
+  font-size: 18px;
+}
+
+.testimonials-section .client-wrapper .job-title {
+  font-family: 'Barlow', sans-serif;
+  color: var(--grayish-blue);
+  font-size: 14px;
+}
+
+.gallery-section {
+  display: grid;
+  width: 100%;
+  height: 50vh;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery-section .milk-bottles {
+  background-image: url('assets/images/desktop/image-gallery-milkbottles.jpg');
+}
+.gallery-section .Orange {
+  background-image: url('assets/images/desktop/image-gallery-orange.jpg');
+}
+.gallery-section .cone {
+  background-image: url('assets/images/desktop/image-gallery-cone.jpg');
+}
+.gallery-section .sugar-cubes {
+  background-image: url('assets/images/desktop/image-gallery-sugarcubes.jpg');
+}
+
+.gallery-section .milk-bottles,
+.gallery-section .Orange,
+.gallery-section .cone,
+.gallery-section .sugar-cubes {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.footer {
+  background-color: rgb(69, 140, 126, 0.7);
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.footer .footer-site-logo {
+  width: 150px;
+}
+
+.footer .footer-nav-wrapper {
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer .footer-nav-wrapper .nav-item {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 500;
+  color: var(--dark-desaturated-cyan);
+  margin-bottom: 50px;
+}
+
+.footer .footer-nav-wrapper .nav-item:hover {
+  color: var(--white);
+}
+
+.footer .social-link-wrapper {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer .social-link-wrapper i {
+  color: #2c7566;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.footer .social-link-wrapper i:hover {
+  color: var(--white);
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar .right-nav-wrapper {
+    width: 400px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .hero-section {
+    height: 90vh;
+  }
+
+  .hero-section .heading-wrapper .heading {
+    font-size: 32px;
+    padding-bottom: 60px;
+  }
+
+  .hero-section .heading-wrapper .arrow-down {
+    height: 100px;
+  }
+
+  .about-services-section {
+    grid-template-rows: repeat(3, 450px);
+  }
+
+  .about-services-section .transform-brand .inner-wrapper {
+    width: 60%;
+  }
+
+  .about-services-section .stand-out-right-audience .inner-wrapper {
+    width: 65%;
+  }
+
+  .testimonials-section {
+    height: 75vh;
+  }
+
+  .testimonials-section h3 {
+    padding-bottom: 55px;
+  }
+
+  .testimonials-section .client-wrapper .feedback {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .footer .footer-nav-wrapper .nav-item {
+    margin-bottom: 0px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .navbar .right-nav-wrapper {
+    width: 380px;
+  }
+
+  .navbar .right-nav-wrapper .contact-btn {
+    padding: 10px 15px;
+  }
+
+  .hero-section {
+    height: 85vh;
+  }
+
+  .hero-section .heading-wrapper .arrow-down {
+    height: 90px;
+  }
+
+  .hero-section .heading-wrapper .heading {
+    font-size: 22px;
+    padding-bottom: 40px;
+  }
+
+  .about-services-section {
+    grid-template-rows: repeat(3, 420px);
+  }
+
+  .about-services-section .transform-brand .inner-wrapper {
+    width: 70%;
+  }
+
+  .about-services-section .stand-out-right-audience .inner-wrapper {
+    width: 75%;
+  }
+
+  .about-services-section .graphic-design .inner-wrapper,
+  .about-services-section .photography .inner-wrapper {
+    width: 60%;
+    bottom: 5%;
+  }
+
+  .about-services-section .graphic-design h3,
+  .about-services-section .photography h3 {
+    font-size: 22px;
+    padding-bottom: 20px;
+  }
+
+  .testimonials-section {
+    height: 70vh;
+  }
+
+  .testimonials-section h3 {
+    padding-bottom: 50px;
+  }
+
+  .testimonials-section .clients-container {
+    width: 95%;
+  }
+
+  .testimonials-section .client-wrapper {
+    width: 29%;
+  }
+
+  .testimonials-section .client-wrapper .feedback {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+
+  .gallery-section {
+    height: 40vh;
+  }
+
+  .footer {
+    height: 35vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar .right-nav-wrapper {
+    width: 350px;
+    font-size: 14px;
+  }
+
+  .navbar .right-nav-wrapper {
+    width: 380px;
+  }
+
+  .navbar .right-nav-wrapper .contact-btn {
+    font-size: 12px;
+  }
+
+  .hero-section {
+    height: 80vh;
+  }
+
+  .hero-section .heading-wrapper .heading {
+    letter-spacing: 4px;
+    padding-bottom: 30px;
+  }
+
+  .hero-section .heading-wrapper .arrow-down {
+    height: 80px;
+  }
+
+  .about-services-section {
+    grid-template-rows: repeat(3, 380px);
+  }
+
+  .about-services-section .transform-brand h2,
+  .about-services-section .stand-out-right-audience h2 {
+    font-size: 24px;
+    padding-bottom: 15px;
+  }
+
+  .about-services-section .transform-brand p,
+  .about-services-section .stand-out-right-audience p {
+    padding-bottom: 20px;
+    font-size: 15px;
+  }
+
+  .about-services-section .transform-brand a,
+  .about-services-section .stand-out-right-audience a {
+    font-size: 14px;
+  }
+
+  .about-services-section .graphic-design .inner-wrapper,
+  .about-services-section .photography .inner-wrapper {
+    width: 70%;
+    bottom: 2%;
+  }
+
+  .about-services-section .graphic-design h3,
+  .about-services-section .photography h3 {
+    font-size: 18px;
+    padding-bottom: 15px;
+  }
+
+  .about-services-section .graphic-design p,
+  .about-services-section .photography p {
+    font-size: 15px;
+  }
+
+  .testimonials-section {
+    height: 60vh;
+  }
+
+  .testimonials-section h3 {
+    padding-bottom: 30px;
+  }
+
+  .testimonials-section .clients-container {
+    width: 100%;
+  }
+
+  .testimonials-section .client-wrapper {
+    width: 30%;
+  }
+
+  .testimonials-section .client-wrapper .profile-photo {
+    width: 60px;
+  }
+
+  .testimonials-section .client-wrapper .feedback {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    line-height: 1.5;
+  }
+
+  .footer {
+    height: 30vh;
+  }
+}
+
+@media screen and (max-width: 655px) {
+  .navbar .site-logo {
+    width: 150px;
+  }
+
+  .navbar .right-nav-wrapper {
+    display: none;
+  }
+  .navbar .toggle-menu-wrapper {
+    display: block;
+  }
+
+  .hero-section {
+    height: 80vh;
+  }
+
+  .hero-section .heading-wrapper {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-section .heading-wrapper .heading {
+    font-size: 32px;
+    padding-bottom: 50px;
+  }
+
+  .hero-section .heading-wrapper .arrow-down {
+    height: 100px;
+  }
+
+  .about-services-section {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 420px 480px 420px 480px 600px 600px;
+  }
+
+  .about-services-section .image-transform-wrapper {
+    order: -1;
+  }
+
+  .about-services-section .transform-brand,
+  .about-services-section .stand-out-right-audience {
+    text-align: center;
+  }
+
+  .about-services-section .transform-brand .inner-wrapper {
+    width: 80%;
+  }
+
+  .about-services-section .stand-out-right-audience .inner-wrapper {
+    width: 80%;
+  }
+
+  .about-services-section .transform-brand h2,
+  .about-services-section .stand-out-right-audience h2 {
+    font-size: 36px;
+    line-height: 1.25;
+  }
+
+  .about-services-section .transform-brand a,
+  .about-services-section .stand-out-right-audience a {
+    font-size: 18px;
+  }
+
+  .about-services-section .transform-brand p,
+  .about-services-section .stand-out-right-audience p {
+    line-height: 1.7;
+    padding-bottom: 35px;
+    padding-top: 20px;
+    font-size: 20px;
+  }
+
+  .about-services-section .graphic-design .inner-wrapper,
+  .about-services-section .photography .inner-wrapper {
+    width: 90%;
+    left: 50%;
+    bottom: 10%;
+    transform: translate(-50%, 0%);
+  }
+
+  .about-services-section .graphic-design h3,
+  .about-services-section .photography h3 {
+    font-size: 34px;
+    padding-bottom: 25px;
+  }
+
+  .about-services-section .graphic-design p,
+  .about-services-section .photography p {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  .testimonials-section {
+    height: auto;
+    padding-bottom: 40px;
+  }
+
+  .testimonials-section h3 {
+    letter-spacing: 6px;
+    font-size: 24px;
+    padding-bottom: 40px;
+    padding-top: 70px;
+  }
+
+  .testimonials-section .clients-container {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .testimonials-section .client-wrapper {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+
+  .testimonials-section .client-wrapper .profile-photo {
+    width: 90px;
+  }
+
+  .testimonials-section .client-wrapper .feedback {
+    line-height: 1.7;
+    font-size: 20px;
+  }
+
+  .testimonials-section .client-wrapper .name {
+    color: var(--very-dark-desaturated-blue);
+    font-size: 22px;
+  }
+
+  .testimonials-section .client-wrapper .job-title {
+    font-size: 18px;
+  }
+
+  .gallery-section {
+    height: 70vh;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer {
+    height: 60vh;
+  }
+
+  .footer .footer-site-logo {
+    width: 250px;
+  }
+
+  .footer .footer-nav-wrapper {
+    width: 100%;
+    justify-content: space-evenly;
+    margin-bottom: 70px;
+  }
+
+  .footer .footer-nav-wrapper .nav-item {
+    font-size: 24px;
+  }
+
+  .footer .social-link-wrapper {
+    width: 250px;
+  }
+
+  .footer .social-link-wrapper i {
+    font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar .toggle-menu-wrapper .menu {
+    top: 80px;
+    height: 350px;
+    width: 300px;
+  }
+
+  .hero-section .heading-wrapper .heading {
+    font-size: 26px;
+  }
+
+  .hero-section .heading-wrapper .arrow-down {
+    height: 90px;
+  }
+
+  .testimonials-section h3 {
+    letter-spacing: 4px;
+    font-size: 20px;
+    padding-bottom: 30px;
+  }
+
+  .gallery-section {
+    height: 60vh;
+  }
+
+  .footer {
+    height: 45vh;
+  }
+
+  .footer .footer-site-logo {
+    width: 200px;
+  }
+
+  .footer .footer-nav-wrapper {
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .navbar {
+    padding: 15px 25px;
+  }
+
+  .navbar .site-logo {
+    width: 120px;
+  }
+
+  .navbar .toggle-menu-wrapper .menu {
+    top: 70px;
+    height: 300px;
+    width: 250px;
+  }
+
+  .navbar .toggle-menu-wrapper .menu .wrapper .menu-item {
+    font-size: 20px;
+  }
+
+  .navbar .toggle-menu-wrapper .menu .wrapper .contact-btn {
+    font-size: 14px;
+    padding: 15px 20px;
+  }
+
+  .hero-section {
+    height: 60vh;
+  }
+
+  .about-services-section {
+    grid-template-rows: 350px 420px 350px 420px 500px 500px;
+  }
+
+  .about-services-section .transform-brand h2,
+  .about-services-section .stand-out-right-audience h2 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .about-services-section .transform-brand a,
+  .about-services-section .stand-out-right-audience a {
+    font-size: 16px;
+  }
+
+  .about-services-section .transform-brand p,
+  .about-services-section .stand-out-right-audience p {
+    line-height: 1.5;
+    padding-bottom: 25px;
+    padding-top: 10px;
+    font-size: 18px;
+  }
+
+  .about-services-section .graphic-design .inner-wrapper,
+  .about-services-section .photography .inner-wrapper {
+    bottom: 5%;
+  }
+
+  .about-services-section .graphic-design h3,
+  .about-services-section .photography h3 {
+    font-size: 28px;
+    padding-bottom: 15px;
+  }
+
+  .about-services-section .graphic-design p,
+  .about-services-section .photography p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .testimonials-section .client-wrapper {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+
+  .testimonials-section .client-wrapper .feedback {
+    line-height: 1.5;
+    font-size: 18px;
+  }
+
+  .testimonials-section .client-wrapper .name {
+    font-size: 20px;
+  }
+
+  .testimonials-section .client-wrapper .job-title {
+    font-size: 15px;
+  }
+
+  .gallery-section {
+    height: 50vh;
+  }
+
+  .footer {
+    height: 40vh;
+  }
+
+  .footer .footer-site-logo {
+    width: 200px;
+  }
+
+  .footer .footer-nav-wrapper {
+    margin-bottom: 25px;
+  }
+
+  .footer .footer-nav-wrapper .nav-item {
+    font-size: 20px;
+  }
+
+  .footer .social-link-wrapper {
+    width: 200px;
+  }
+
+  .footer .social-link-wrapper i {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .navbar .site-logo {
+    width: 100px;
+  }
+
+  .navbar .toggle-menu-wrapper .menu {
+    top: 60px;
+    height: 250px;
+    width: 215px;
+  }
+
+  .navbar .toggle-menu-wrapper .menu .wrapper .menu-item {
+    font-size: 16px;
+  }
+
+  .navbar .toggle-menu-wrapper .menu .wrapper .contact-btn {
+    font-size: 12px;
+    padding: 10px 15px;
+  }
+
+  .hero-section {
+    height: 50vh;
+  }
+
+  .hero-section .heading-wrapper .heading {
+    font-size: 22px;
+    padding-bottom: 30px;
+  }
+
+  .hero-section .heading-wrapper .arrow-down {
+    height: 60px;
+  }
+
+  .about-services-section {
+    grid-template-rows: 300px 380px 300px 380px 450px 450px;
+  }
+
+  .about-services-section .transform-brand h2,
+  .about-services-section .stand-out-right-audience h2 {
+    font-size: 22px;
+  }
+
+  .about-services-section .transform-brand a,
+  .about-services-section .stand-out-right-audience a {
+    font-size: 14px;
+  }
+
+  .about-services-section .transform-brand p,
+  .about-services-section .stand-out-right-audience p {
+    line-height: 1.25;
+    padding-bottom: 15px;
+    padding-top: 5px;
+  }
+
+  .about-services-section .graphic-design h3,
+  .about-services-section .photography h3 {
+    font-size: 22px;
+    padding-bottom: 10px;
+  }
+
+  .about-services-section .graphic-design p,
+  .about-services-section .photography p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .testimonials-section .client-wrapper {
+    padding-top: 15px;
+    padding-bottom: 25px;
+  }
+
+  .testimonials-section .client-wrapper .feedback {
+    line-height: 1.5;
+    font-size: 16px;
+  }
+
+  .testimonials-section .client-wrapper .name {
+    font-size: 18px;
+  }
+
+  .testimonials-section .client-wrapper .job-title {
+    font-size: 14px;
+  }
+
+  .gallery-section {
+    height: auto;
+    grid-template-rows: repeat(4, 180px);
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .footer {
+    height: 35vh;
+  }
+
+  .footer .footer-site-logo {
+    width: 150px;
+  }
+
+  .footer .footer-nav-wrapper {
+    margin-bottom: 15px;
+  }
+
+  .footer .footer-nav-wrapper .nav-item {
+    font-size: 16px;
+  }
+
+  .footer .social-link-wrapper {
+    width: 150px;
+  }
+
+  .footer .social-link-wrapper i {
+    font-size: 22px;
   }
 }
